@@ -9,10 +9,10 @@ async function startServer() {
 
     // Start Express server
     const PORT = config.server.port;
-    app.listen(PORT, () => {
-      console.log(`🚀 Server running on http://localhost:${PORT}`);
-      console.log(`📝 API: http://localhost:${PORT}/api/feedback`);
-      console.log(`🏥 Health: http://localhost:${PORT}/api/health`);
+    app.listen(PORT, "0.0.0.0", () => {
+      console.log(`🚀 Server running on port ${PORT}`);
+      console.log(`📝 API: http://0.0.0.0:${PORT}/api/feedback`);
+      console.log(`🏥 Health: http://0.0.0.0:${PORT}/api/health`);
     });
   } catch (error) {
     console.error("❌ Failed to start server:", error);
